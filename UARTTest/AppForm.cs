@@ -41,7 +41,6 @@ namespace UARTTest
             //Display FormTextName + Versionnumber as AppName
             this.Text = "Send and Receive Project " + VersionApp;
 
-
             if (vs.Major <= 6.2)
             {
                 //if not windows 10, warn user.
@@ -61,6 +60,7 @@ namespace UARTTest
                 //if windows 10 load the form and Initialize the app.
                 this.Load += Form1_Load;
                 InitializeComponent();
+                serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived);
             }
 
             //Set default button and text status
@@ -93,6 +93,7 @@ namespace UARTTest
                 serialPort.StopBits = StopBits.One;
                 serialPort.Handshake = Handshake.None;
                 serialPort.RtsEnable = false;
+                serialPort.DtrEnable = true;
 
                 serialPort.Open();
 
@@ -144,7 +145,7 @@ namespace UARTTest
             //print text to datatextbox
             DataTextBox.AppendText(rxString);
             DataTextBox.ScrollToCaret();
-
+            
         }
 
         
@@ -176,22 +177,12 @@ namespace UARTTest
         //TODO Currently bugged, if err then display err x10 must fix before release!!!!!!
         private void SendSpam_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Unimplemented, Unimplemented, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
-            /* 
-            int n = 0;
-
-            while (n < 10)
-            {
-                try
+            //MessageBox.Show(Unimplemented, Unimplemented, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
+            for (int i = 0; i < numericUpDownSpam.Value; i++)
                 {
                     SendDataButton_Click(sender, e);
-                    n++;
+                    break;
                 }
-                catch (Exception err)
-                {
-                    MessageBox.Show("Incorrect input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }*/
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,6 +215,9 @@ namespace UARTTest
             new ChangelogForm().Show();
         }
 
+        private void NumericUpDownSpam_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
