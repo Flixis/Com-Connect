@@ -12,6 +12,8 @@ using Microsoft.Win32;
 using System.Globalization;
 using System.Reflection;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+
 
 namespace UARTTest
 {
@@ -60,7 +62,6 @@ namespace UARTTest
                 //if windows 10 load the form and Initialize the app.
                 this.Load += Form1_Load;
                 InitializeComponent();
-                serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived);
             }
 
             //Set default button and text status
@@ -96,6 +97,8 @@ namespace UARTTest
                 serialPort.DtrEnable = true;
 
                 serialPort.Open();
+                //tell the program that what the data receive handler is
+                serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived);
 
                 //change default button status to connect status.
                 CONNECTEDSTATUS.Text = "CONNECTED";
@@ -136,18 +139,9 @@ namespace UARTTest
         //handle the data receiving from serialport
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            rxString = serialPort.ReadExisting();
-            this.Invoke(new EventHandler(DisplayText));
+            //DataTextBox.AppendText(serialPort.ReadExisting());
+            Console.Write(serialPort.ReadExisting());
         }
-        //print handler for text got from serialPort1_DataReceived function
-        private void DisplayText(object o, EventArgs e)
-        {
-            //print text to datatextbox
-            DataTextBox.AppendText(rxString);
-            DataTextBox.ScrollToCaret();
-            
-        }
-
         
         private void SendDataButton_Click(object sender, EventArgs e)
         {
