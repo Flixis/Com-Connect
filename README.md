@@ -5,7 +5,11 @@ A Simple program to talk with COMPorts on your PC with a simple GUI.
 
 ## Getting Started
 
-Current Download can be found here: [Download](https://drive.google.com/drive/folders/1i57Je9Nya6W3g7UMvOISUxf8G3VpCeqf?usp=sharing)
+Current Download can be found here: 
+
+[Download](https://github.com/Flixis/Com-Connect/releases)
+
+[Alternate Download](https://drive.google.com/drive/folders/1i57Je9Nya6W3g7UMvOISUxf8G3VpCeqf?usp=sharing)
 
 ### Prerequisites
 - Windows
