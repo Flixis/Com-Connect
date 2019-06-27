@@ -214,5 +214,11 @@ namespace UARTTest
         {
 
         }
+
+        private void ButtonSettings_Click(object sender, EventArgs e)
+        {
+            new SettingsForm().Show();
+            Console.WriteLine("Loaded SettingsForm");
+        }
     }
 }

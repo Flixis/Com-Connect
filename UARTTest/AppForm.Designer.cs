@@ -52,6 +52,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SendSpam = new System.Windows.Forms.Button();
             this.numericUpDownSpam = new System.Windows.Forms.NumericUpDown();
+            this.ButtonSettings = new System.Windows.Forms.Button();
             this.groupBoxComport.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).BeginInit();
@@ -258,6 +259,16 @@
             this.numericUpDownSpam.TabIndex = 15;
             this.numericUpDownSpam.ValueChanged += new System.EventHandler(this.NumericUpDownSpam_ValueChanged);
             // 
+            // ButtonSettings
+            // 
+            this.ButtonSettings.Location = new System.Drawing.Point(177, 74);
+            this.ButtonSettings.Name = "ButtonSettings";
+            this.ButtonSettings.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSettings.TabIndex = 16;
+            this.ButtonSettings.Text = "SETTINGS";
+            this.ButtonSettings.UseVisualStyleBackColor = true;
+            this.ButtonSettings.Click += new System.EventHandler(this.ButtonSettings_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -265,6 +276,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(533, 281);
+            this.Controls.Add(this.ButtonSettings);
             this.Controls.Add(this.numericUpDownSpam);
             this.Controls.Add(this.SendSpam);
             this.Controls.Add(this.PanicButton);
@@ -319,6 +331,7 @@
         private System.Windows.Forms.ToolStripMenuItem changeLogToolStripMenuItem;
         private System.Windows.Forms.Button SendSpam;
         private System.Windows.Forms.NumericUpDown numericUpDownSpam;
+        private System.Windows.Forms.Button ButtonSettings;
     }
 }
 
