@@ -22,7 +22,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available.
 
 * **Tariq Dinmohamed** - (https://github.com/Flixis)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Flixis/Com-Connect/contributors) who participated in this project.
 
 ## License
 
