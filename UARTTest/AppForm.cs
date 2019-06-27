@@ -157,7 +157,6 @@ namespace UARTTest
             try
             {
                 serialPort.Write(DataSendBox.Text + "\r\n");
-                Console.Write(DataSendBox.Text);
             }
             //If something happens that isn't supposed to happen I don't just want the program to crash, so instead I catch the error and display it to the user.
             catch (Exception err)
