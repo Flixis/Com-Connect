@@ -28,8 +28,9 @@ namespace UARTTest
         //Get Windows Versions.
         Version vs = Environment.OSVersion.Version;
 
-        /*Testing messagebox for whatever
+        /*Testing messageboxs for whatever
         MessageBox.Show(VersionApp, "WTF is wrong with you?", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        MessageBox.Show(Unimplemented, Unimplemented, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         */
 
 
@@ -139,26 +140,24 @@ namespace UARTTest
         //handle the data receiving from serialport
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            //DataTextBox.AppendText(serialPort.ReadExisting());
-            Console.Write(serialPort.ReadExisting());
+            rxString = serialPort.ReadExisting();
+            this.Invoke(new EventHandler(DisplayText));
         }
-        
+        //print handler for text got from serialPort1_DataReceived function
+        private void DisplayText(object o, EventArgs e)
+        {
+            //print text to datatextbox
+            DataTextBox.AppendText(rxString);
+            DataTextBox.ScrollToCaret();
+
+        }
+
         private void SendDataButton_Click(object sender, EventArgs e)
         {
-            /*This one is a little difficult, but here it goes.
-             
-            The data that is being send has to be a byte because of the way we send and receive data over serial*1, because of this I couldn't just simply send a string.
-            Instead we're converting a String to a Byte. This Byte can't just be read from the textbox so it has to be converted to a byte which can be seen at variable "bytes".
-            after I convert whatever the text is in the textbox I write it to the serialport.
-            serialport.write requires a few things, explained here: serialPort.Write(data, offset, Length);
-
-            *1 You can send ASCII over serial I just couldn't be bothered to figure that out.
-             
-             */
             try
             {
-                var bytes = DataSendBox.Text.Split(' ').Select(h => byte.Parse(h, NumberStyles.AllowHexSpecifier)).ToArray();
-                serialPort.Write(bytes, 0, bytes.Length);
+                serialPort.Write(DataSendBox.Text + "\r\n");
+                Console.Write(DataSendBox.Text);
             }
             //If something happens that isn't supposed to happen I don't just want the program to crash, so instead I catch the error and display it to the user.
             catch (Exception err)
@@ -168,14 +167,14 @@ namespace UARTTest
 
         }
 
-        //TODO Currently bugged, if err then display err x10 must fix before release!!!!!!
         private void SendSpam_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(Unimplemented, Unimplemented, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
-            for (int i = 0; i < numericUpDownSpam.Value; i++)
+            //write whatever text is in the DataSendBox X(numericUpDownSpam) amount of times.
+            int i = 0;
+            while (i < numericUpDownSpam.Value)
                 {
-                    SendDataButton_Click(sender, e);
-                    break;
+                    serialPort.Write(DataSendBox.Text + "\r\n");
+                    i++;
                 }
         }
 
