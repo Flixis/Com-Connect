@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tariq's Send and Receive Program")]
-[assembly: AssemblyDescription("Program to Send and Receive data, it includes basic functionality.")]
+[assembly: AssemblyTitle("Tariq's ComConnect")]
+[assembly: AssemblyDescription("A Simple program to talk with COMPorts on your PC with a simple GUI.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tariq Dinmohamed")]
-[assembly: AssemblyProduct("Send and Receive")]
+[assembly: AssemblyProduct("ComConnect")]
 [assembly: AssemblyCopyright("Copyright Tariq Dinmohamed  ©2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

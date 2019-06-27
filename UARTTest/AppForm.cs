@@ -42,7 +42,7 @@ namespace UARTTest
             string VersionApp = fvi.FileVersion;
 
             //Display FormTextName + Versionnumber as AppName
-            this.Text = "Send and Receive Project " + VersionApp;
+            this.Text = "ComConnect " + VersionApp;
 
             if (vs.Major <= 6.2)
             {
