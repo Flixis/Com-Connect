@@ -187,7 +187,9 @@ namespace UARTTest
         private void PanicButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("The send functionally doesn't require the '0x' Prefix." + Environment.NewLine + Environment.NewLine +
-                "Comports currently do not automatically update, this requires a program restart.", "What the fuck?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "Comports currently do not automatically update, this requires a program restart." + Environment.NewLine + Environment.NewLine
+                + "Currently the program adds \\r\\n at all times", "What the fuck?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)

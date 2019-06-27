@@ -22,5 +22,11 @@ namespace UARTTest
         {
             
         }
+
+        private void LinkLabelGit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //on click open git issues page
+            System.Diagnostics.Process.Start("https://github.com/Flixis/Com-Connect/issues");
+        }
     }
 }
