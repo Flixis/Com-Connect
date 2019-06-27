@@ -22,7 +22,7 @@ namespace UARTTest
     {
         string rxString; //String for data receive handeling
 
-        //Usefull Strings?
+        //Unimplemented string, mainly used for things that aren't done but make it into release anyway.
         string Unimplemented = "Function is currently Unimplemented";
 
         //Get Windows Versions.
