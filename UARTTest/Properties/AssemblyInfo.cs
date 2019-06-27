@@ -1,6 +1,5 @@
-﻿using System.Resources;
-using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -10,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Program to Send and Receive data, it includes basic functionality.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tariq Dinmohamed")]
-[assembly: AssemblyProduct("Send and Receive")]
+[assembly: AssemblyProduct("Send&Receive")]
 [assembly: AssemblyCopyright("Copyright Tariq Dinmohamed  ©2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

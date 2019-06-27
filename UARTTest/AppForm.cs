@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using System.IO.Ports;
-using Microsoft.Win32;
-using System.Globalization;
-using System.Reflection;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
+using System.IO.Ports;
+using System.Reflection;
+using System.Windows.Forms;
 
 
 namespace UARTTest
@@ -51,7 +41,7 @@ namespace UARTTest
                 InitializeComponent();
                 MessageBox.Show("This version of windows is not tested, please update to Windows 10.", "Windows outdated", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if(vs.Major < 6)
+            else if (vs.Major < 6)
             {
                 //if not windows 7 or up refuse opening
                 MessageBox.Show("This app requires windows 7 or higher.", "WTF is wrong with you?", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,7 +59,7 @@ namespace UARTTest
             ButtonOpen.Enabled = true;
             ButtonClose.Enabled = false;
             CONNECTEDSTATUS.Text = "DISCONNECTED";
-            
+
         }
 
         //get serialports and put in combobox1
@@ -107,7 +97,7 @@ namespace UARTTest
                 ButtonClose.Enabled = true;
                 //add incoming data to DataBox and add CR+LF 
                 DataTextBox.AppendText(Environment.NewLine);
-                DataTextBox.AppendText(String.Format("COMPORT OPEN",Environment.NewLine));
+                DataTextBox.AppendText(String.Format("COMPORT OPEN", Environment.NewLine));
             }
             //if failed catch the error and display error
             catch (Exception err)
@@ -127,7 +117,7 @@ namespace UARTTest
                 CONNECTEDSTATUS.Text = "DISCONNECTED";
 
                 DataTextBox.AppendText(Environment.NewLine);
-                DataTextBox.AppendText(String.Format("COMPORT CLOSED" , Environment.NewLine));
+                DataTextBox.AppendText(String.Format("COMPORT CLOSED", Environment.NewLine));
             }
         }
 
@@ -171,10 +161,10 @@ namespace UARTTest
             //write whatever text is in the DataSendBox X(numericUpDownSpam) amount of times.
             int i = 0;
             while (i < numericUpDownSpam.Value)
-                {
-                    serialPort.Write(DataSendBox.Text + "\r\n");
-                    i++;
-                }
+            {
+                serialPort.Write(DataSendBox.Text + "\r\n");
+                i++;
+            }
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,7 +178,7 @@ namespace UARTTest
             MessageBox.Show("The send functionally doesn't require the '0x' Prefix." + Environment.NewLine + Environment.NewLine +
                 "Comports currently do not automatically update, this requires a program restart." + Environment.NewLine + Environment.NewLine
                 + "Currently the program adds \\r\\n at all times", "What the fuck?", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
+
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
