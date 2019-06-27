@@ -48,11 +48,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SendSpam = new System.Windows.Forms.Button();
+            this.numericUpDownSpam = new System.Windows.Forms.NumericUpDown();
             this.groupBoxComport.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxComport
@@ -120,7 +122,7 @@
             // 
             // serialPort
             // 
-            this.serialPort.PortName = "COM4";
+            this.serialPort.PortName = "COM";
             this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialPort1_DataReceived);
             // 
             // DataTextBox
@@ -220,23 +222,23 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // changeLogToolStripMenuItem
             // 
             this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
-            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.changeLogToolStripMenuItem.Text = "ChangeLog";
             this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.ChangeLogToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // SendSpam
             // 
@@ -248,6 +250,14 @@
             this.SendSpam.UseVisualStyleBackColor = true;
             this.SendSpam.Click += new System.EventHandler(this.SendSpam_Click);
             // 
+            // numericUpDownSpam
+            // 
+            this.numericUpDownSpam.Location = new System.Drawing.Point(177, 252);
+            this.numericUpDownSpam.Name = "numericUpDownSpam";
+            this.numericUpDownSpam.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDownSpam.TabIndex = 15;
+            this.numericUpDownSpam.ValueChanged += new System.EventHandler(this.NumericUpDownSpam_ValueChanged);
+            // 
             // AppForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -255,6 +265,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(533, 281);
+            this.Controls.Add(this.numericUpDownSpam);
             this.Controls.Add(this.SendSpam);
             this.Controls.Add(this.PanicButton);
             this.Controls.Add(this.SendDataButton);
@@ -278,6 +289,7 @@
             this.groupBoxComport.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,6 +318,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeLogToolStripMenuItem;
         private System.Windows.Forms.Button SendSpam;
+        private System.Windows.Forms.NumericUpDown numericUpDownSpam;
     }
 }
 

@@ -12,6 +12,8 @@ using Microsoft.Win32;
 using System.Globalization;
 using System.Reflection;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+
 
 namespace UARTTest
 {
@@ -26,8 +28,9 @@ namespace UARTTest
         //Get Windows Versions.
         Version vs = Environment.OSVersion.Version;
 
-        /*Testing messagebox for whatever
+        /*Testing messageboxs for whatever
         MessageBox.Show(VersionApp, "WTF is wrong with you?", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        MessageBox.Show(Unimplemented, Unimplemented, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         */
 
 
@@ -40,7 +43,6 @@ namespace UARTTest
 
             //Display FormTextName + Versionnumber as AppName
             this.Text = "Send and Receive Project " + VersionApp;
-
 
             if (vs.Major <= 6.2)
             {
@@ -93,8 +95,11 @@ namespace UARTTest
                 serialPort.StopBits = StopBits.One;
                 serialPort.Handshake = Handshake.None;
                 serialPort.RtsEnable = false;
+                serialPort.DtrEnable = true;
 
                 serialPort.Open();
+                //tell the program that what the data receive handler is
+                serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived);
 
                 //change default button status to connect status.
                 CONNECTEDSTATUS.Text = "CONNECTED";
@@ -147,23 +152,12 @@ namespace UARTTest
 
         }
 
-        
         private void SendDataButton_Click(object sender, EventArgs e)
         {
-            /*This one is a little difficult, but here it goes.
-             
-            The data that is being send has to be a byte because of the way we send and receive data over serial*1, because of this I couldn't just simply send a string.
-            Instead we're converting a String to a Byte. This Byte can't just be read from the textbox so it has to be converted to a byte which can be seen at variable "bytes".
-            after I convert whatever the text is in the textbox I write it to the serialport.
-            serialport.write requires a few things, explained here: serialPort.Write(data, offset, Length);
-
-            *1 You can send ASCII over serial I just couldn't be bothered to figure that out.
-             
-             */
             try
             {
-                var bytes = DataSendBox.Text.Split(' ').Select(h => byte.Parse(h, NumberStyles.AllowHexSpecifier)).ToArray();
-                serialPort.Write(bytes, 0, bytes.Length);
+                serialPort.Write(DataSendBox.Text + "\r\n");
+                Console.Write(DataSendBox.Text);
             }
             //If something happens that isn't supposed to happen I don't just want the program to crash, so instead I catch the error and display it to the user.
             catch (Exception err)
@@ -173,25 +167,15 @@ namespace UARTTest
 
         }
 
-        //TODO Currently bugged, if err then display err x10 must fix before release!!!!!!
         private void SendSpam_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Unimplemented, Unimplemented, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
-            /* 
-            int n = 0;
-
-            while (n < 10)
-            {
-                try
+            //write whatever text is in the DataSendBox X(numericUpDownSpam) amount of times.
+            int i = 0;
+            while (i < numericUpDownSpam.Value)
                 {
-                    SendDataButton_Click(sender, e);
-                    n++;
+                    serialPort.Write(DataSendBox.Text + "\r\n");
+                    i++;
                 }
-                catch (Exception err)
-                {
-                    MessageBox.Show("Incorrect input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }*/
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,6 +208,9 @@ namespace UARTTest
             new ChangelogForm().Show();
         }
 
+        private void NumericUpDownSpam_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
