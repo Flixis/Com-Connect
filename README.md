@@ -37,5 +37,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Acknowledgments
 
-* Shoutout to StackOverFlow with you people this would have never happenend, yes that includes the bugs you may have created.
+* Shoutout to StackOverFlow without you people this would have never happenend, yes that includes the bugs you may have created.
 
