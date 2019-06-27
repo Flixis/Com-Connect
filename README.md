@@ -5,7 +5,11 @@ A Simple program to talk with COMPorts on your PC with a simple GUI.
 
 ## Getting Started
 
-Current Download can be found here:
+Current Download can be found here: 
+
+[Download](https://github.com/Flixis/Com-Connect/releases)
+
+[Alternate Download](https://drive.google.com/drive/folders/1i57Je9Nya6W3g7UMvOISUxf8G3VpCeqf?usp=sharing)
 
 ### Prerequisites
 - Windows
@@ -20,7 +24,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available.
 
 ## Authors
 
-* **Tariq Dinmohamed** - (https://github.com/Flixis)
+* [**Tariq Dinmohamed**](https://github.com/Flixis)
 
 See also the list of [contributors](https://github.com/Flixis/Com-Connect/contributors) who participated in this project.
 
