@@ -38,10 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabelGit = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.VersionTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // VersionTabControl
@@ -49,6 +52,7 @@
             this.VersionTabControl.Controls.Add(this.tabPage1);
             this.VersionTabControl.Controls.Add(this.tabPage2);
             this.VersionTabControl.Controls.Add(this.tabPage3);
+            this.VersionTabControl.Controls.Add(this.tabPage4);
             this.VersionTabControl.Location = new System.Drawing.Point(12, 12);
             this.VersionTabControl.Name = "VersionTabControl";
             this.VersionTabControl.SelectedIndex = 0;
@@ -139,6 +143,26 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "For more info on #issues check the Github page";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(396, 156);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Version 1.4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(200, 52);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Version 1.4\r\n- Added Github to ContextMenuStrip\r\n- Added Settings menu for COMPOR" +
+    "T\r\n- Added Tooltip to numericUpDownSpam\r\n";
+            // 
             // ChangelogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +184,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +202,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabelGit;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label5;
     }
 }

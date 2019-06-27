@@ -220,5 +220,11 @@ namespace UARTTest
             new SettingsForm().Show();
             Console.WriteLine("Loaded SettingsForm");
         }
+
+        private void GithubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //on click open git issues page
+            System.Diagnostics.Process.Start("https://github.com/Flixis/Com-Connect/issues");
+        }
     }
 }

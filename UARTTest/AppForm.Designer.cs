@@ -53,6 +53,7 @@
             this.SendSpam = new System.Windows.Forms.Button();
             this.numericUpDownSpam = new System.Windows.Forms.NumericUpDown();
             this.ButtonSettings = new System.Windows.Forms.Button();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxComport.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).BeginInit();
@@ -215,6 +216,7 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AboutToolStripMenuItem,
             this.changeLogToolStripMenuItem,
+            this.githubToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -223,21 +225,21 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // changeLogToolStripMenuItem
             // 
             this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
-            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changeLogToolStripMenuItem.Text = "ChangeLog";
             this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.ChangeLogToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -257,6 +259,7 @@
             this.numericUpDownSpam.Name = "numericUpDownSpam";
             this.numericUpDownSpam.Size = new System.Drawing.Size(37, 20);
             this.numericUpDownSpam.TabIndex = 15;
+            this.toolTips.SetToolTip(this.numericUpDownSpam, "Value dictates the amount of times the spam button sends the message");
             this.numericUpDownSpam.ValueChanged += new System.EventHandler(this.NumericUpDownSpam_ValueChanged);
             // 
             // ButtonSettings
@@ -268,6 +271,13 @@
             this.ButtonSettings.Text = "SETTINGS";
             this.ButtonSettings.UseVisualStyleBackColor = true;
             this.ButtonSettings.Click += new System.EventHandler(this.ButtonSettings_Click);
+            // 
+            // githubToolStripMenuItem
+            // 
+            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.githubToolStripMenuItem.Text = "Github";
+            this.githubToolStripMenuItem.Click += new System.EventHandler(this.GithubToolStripMenuItem_Click);
             // 
             // AppForm
             // 
@@ -332,6 +342,7 @@
         private System.Windows.Forms.Button SendSpam;
         private System.Windows.Forms.NumericUpDown numericUpDownSpam;
         private System.Windows.Forms.Button ButtonSettings;
+        private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
     }
 }
 
