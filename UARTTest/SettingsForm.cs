@@ -16,5 +16,10 @@ namespace UARTTest
         {
             InitializeComponent();
         }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

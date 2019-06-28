@@ -39,6 +39,7 @@
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.DataTextBox = new System.Windows.Forms.RichTextBox();
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
+            this.numericUpDownSpam = new System.Windows.Forms.NumericUpDown();
             this.ClearDataTextBoxButton = new System.Windows.Forms.Button();
             this.groupBoxComport = new System.Windows.Forms.GroupBox();
             this.CONNECTEDSTATUS = new System.Windows.Forms.Label();
@@ -49,14 +50,15 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SendSpam = new System.Windows.Forms.Button();
-            this.numericUpDownSpam = new System.Windows.Forms.NumericUpDown();
             this.ButtonSettings = new System.Windows.Forms.Button();
-            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).BeginInit();
             this.groupBoxComport.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxComport
@@ -139,6 +141,15 @@
             // toolTips
             // 
             this.toolTips.Popup += new System.Windows.Forms.PopupEventHandler(this.ToolTip1_Popup);
+            // 
+            // numericUpDownSpam
+            // 
+            this.numericUpDownSpam.Location = new System.Drawing.Point(177, 252);
+            this.numericUpDownSpam.Name = "numericUpDownSpam";
+            this.numericUpDownSpam.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDownSpam.TabIndex = 15;
+            this.toolTips.SetToolTip(this.numericUpDownSpam, "Value dictates the amount of times the spam button sends the message");
+            this.numericUpDownSpam.ValueChanged += new System.EventHandler(this.NumericUpDownSpam_ValueChanged);
             // 
             // ClearDataTextBoxButton
             // 
@@ -225,21 +236,28 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // changeLogToolStripMenuItem
             // 
             this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
-            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.changeLogToolStripMenuItem.Text = "ChangeLog";
             this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.ChangeLogToolStripMenuItem_Click);
+            // 
+            // githubToolStripMenuItem
+            // 
+            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.githubToolStripMenuItem.Text = "Github";
+            this.githubToolStripMenuItem.Click += new System.EventHandler(this.GithubToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -253,15 +271,6 @@
             this.SendSpam.UseVisualStyleBackColor = true;
             this.SendSpam.Click += new System.EventHandler(this.SendSpam_Click);
             // 
-            // numericUpDownSpam
-            // 
-            this.numericUpDownSpam.Location = new System.Drawing.Point(177, 252);
-            this.numericUpDownSpam.Name = "numericUpDownSpam";
-            this.numericUpDownSpam.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDownSpam.TabIndex = 15;
-            this.toolTips.SetToolTip(this.numericUpDownSpam, "Value dictates the amount of times the spam button sends the message");
-            this.numericUpDownSpam.ValueChanged += new System.EventHandler(this.NumericUpDownSpam_ValueChanged);
-            // 
             // ButtonSettings
             // 
             this.ButtonSettings.Location = new System.Drawing.Point(177, 74);
@@ -272,12 +281,25 @@
             this.ButtonSettings.UseVisualStyleBackColor = true;
             this.ButtonSettings.Click += new System.EventHandler(this.ButtonSettings_Click);
             // 
-            // githubToolStripMenuItem
+            // checkBox1
             // 
-            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
-            this.githubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.githubToolStripMenuItem.Text = "Github";
-            this.githubToolStripMenuItem.Click += new System.EventHandler(this.GithubToolStripMenuItem_Click);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(178, 104);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(47, 17);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "+CR";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(178, 119);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(44, 17);
+            this.checkBox2.TabIndex = 18;
+            this.checkBox2.Text = "+LF";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // AppForm
             // 
@@ -286,6 +308,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(533, 281);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.ButtonSettings);
             this.Controls.Add(this.numericUpDownSpam);
             this.Controls.Add(this.SendSpam);
@@ -307,11 +331,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "AppForm";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).EndInit();
             this.groupBoxComport.ResumeLayout(false);
             this.groupBoxComport.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,6 +367,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSpam;
         private System.Windows.Forms.Button ButtonSettings;
         private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
