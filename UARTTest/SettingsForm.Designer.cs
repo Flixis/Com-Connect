@@ -32,20 +32,20 @@
             this.comboBoxBaudrate = new System.Windows.Forms.ComboBox();
             this.ComportLabel = new System.Windows.Forms.Label();
             this.comboBoxComport = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxDataBits = new System.Windows.Forms.ComboBox();
+            this.comboBoxParity = new System.Windows.Forms.ComboBox();
             this.DataBitsLabel = new System.Windows.Forms.Label();
             this.ParityLabel = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.checkBox1bit = new System.Windows.Forms.CheckBox();
+            this.checkBox2bits = new System.Windows.Forms.CheckBox();
+            this.groupBoxBits = new System.Windows.Forms.GroupBox();
+            this.groupBoxHFC = new System.Windows.Forms.GroupBox();
+            this.HFC485 = new System.Windows.Forms.CheckBox();
+            this.HFCDTR = new System.Windows.Forms.CheckBox();
+            this.groupBoxHFCN = new System.Windows.Forms.CheckBox();
+            this.HFCRTS = new System.Windows.Forms.CheckBox();
+            this.groupBoxBits.SuspendLayout();
+            this.groupBoxHFC.SuspendLayout();
             this.SuspendLayout();
             // 
             // BaudrateLabel
@@ -91,36 +91,36 @@
             this.comboBoxComport.TabIndex = 4;
             this.comboBoxComport.Text = "COM4";
             // 
-            // comboBox1
+            // comboBoxDataBits
             // 
-            this.comboBox1.AllowDrop = true;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxDataBits.AllowDrop = true;
+            this.comboBoxDataBits.FormattingEnabled = true;
+            this.comboBoxDataBits.Items.AddRange(new object[] {
             "8",
             "7",
             "6",
             "5"});
-            this.comboBox1.Location = new System.Drawing.Point(82, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "8";
+            this.comboBoxDataBits.Location = new System.Drawing.Point(82, 33);
+            this.comboBoxDataBits.Name = "comboBoxDataBits";
+            this.comboBoxDataBits.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxDataBits.TabIndex = 8;
+            this.comboBoxDataBits.Text = "8";
             // 
-            // comboBox2
+            // comboBoxParity
             // 
-            this.comboBox2.AllowDrop = true;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxParity.AllowDrop = true;
+            this.comboBoxParity.FormattingEnabled = true;
+            this.comboBoxParity.Items.AddRange(new object[] {
             "NONE",
             "ODD",
             "EVEN",
             "MARK",
             "SPACE"});
-            this.comboBox2.Location = new System.Drawing.Point(335, 33);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.Text = "None";
+            this.comboBoxParity.Location = new System.Drawing.Point(335, 33);
+            this.comboBoxParity.Name = "comboBoxParity";
+            this.comboBoxParity.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxParity.TabIndex = 9;
+            this.comboBoxParity.Text = "None";
             // 
             // DataBitsLabel
             // 
@@ -140,101 +140,101 @@
             this.ParityLabel.TabIndex = 14;
             this.ParityLabel.Text = "PARITY";
             // 
-            // checkBox1
+            // checkBox1bit
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(43, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "1bit";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1bit.AutoSize = true;
+            this.checkBox1bit.Location = new System.Drawing.Point(6, 22);
+            this.checkBox1bit.Name = "checkBox1bit";
+            this.checkBox1bit.Size = new System.Drawing.Size(43, 17);
+            this.checkBox1bit.TabIndex = 16;
+            this.checkBox1bit.Text = "1bit";
+            this.checkBox1bit.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBox2bits
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(55, 22);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(48, 17);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "2bits";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2bits.AutoSize = true;
+            this.checkBox2bits.Location = new System.Drawing.Point(55, 22);
+            this.checkBox2bits.Name = "checkBox2bits";
+            this.checkBox2bits.Size = new System.Drawing.Size(48, 17);
+            this.checkBox2bits.TabIndex = 17;
+            this.checkBox2bits.Text = "2bits";
+            this.checkBox2bits.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBoxBits
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Location = new System.Drawing.Point(15, 60);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(107, 47);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "STOPBITS";
+            this.groupBoxBits.Controls.Add(this.checkBox1bit);
+            this.groupBoxBits.Controls.Add(this.checkBox2bits);
+            this.groupBoxBits.Location = new System.Drawing.Point(15, 60);
+            this.groupBoxBits.Name = "groupBoxBits";
+            this.groupBoxBits.Size = new System.Drawing.Size(107, 47);
+            this.groupBoxBits.TabIndex = 18;
+            this.groupBoxBits.TabStop = false;
+            this.groupBoxBits.Text = "STOPBITS";
             // 
-            // groupBox2
+            // groupBoxHFC
             // 
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Location = new System.Drawing.Point(268, 60);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(182, 73);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "HARDWARE FLOW CONTROL";
+            this.groupBoxHFC.Controls.Add(this.HFC485);
+            this.groupBoxHFC.Controls.Add(this.HFCDTR);
+            this.groupBoxHFC.Controls.Add(this.groupBoxHFCN);
+            this.groupBoxHFC.Controls.Add(this.HFCRTS);
+            this.groupBoxHFC.Location = new System.Drawing.Point(268, 60);
+            this.groupBoxHFC.Name = "groupBoxHFC";
+            this.groupBoxHFC.Size = new System.Drawing.Size(182, 73);
+            this.groupBoxHFC.TabIndex = 19;
+            this.groupBoxHFC.TabStop = false;
+            this.groupBoxHFC.Text = "HARDWARE FLOW CONTROL";
             // 
-            // checkBox3
+            // HFC485
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 22);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(52, 17);
-            this.checkBox3.TabIndex = 16;
-            this.checkBox3.Text = "None";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.HFC485.AutoSize = true;
+            this.HFC485.Location = new System.Drawing.Point(102, 45);
+            this.HFC485.Name = "HFC485";
+            this.HFC485.Size = new System.Drawing.Size(73, 17);
+            this.HFC485.TabIndex = 19;
+            this.HFC485.Text = "RS485-rts";
+            this.HFC485.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // HFCDTR
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(102, 22);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(74, 17);
-            this.checkBox4.TabIndex = 17;
-            this.checkBox4.Text = "RTS/CTS";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.HFCDTR.AutoSize = true;
+            this.HFCDTR.Location = new System.Drawing.Point(6, 45);
+            this.HFCDTR.Name = "HFCDTR";
+            this.HFCDTR.Size = new System.Drawing.Size(77, 17);
+            this.HFCDTR.TabIndex = 18;
+            this.HFCDTR.Text = "DTR/DSR";
+            this.HFCDTR.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // groupBoxHFCN
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 45);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(77, 17);
-            this.checkBox5.TabIndex = 18;
-            this.checkBox5.Text = "DTR/DSR";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.groupBoxHFCN.AutoSize = true;
+            this.groupBoxHFCN.Location = new System.Drawing.Point(6, 22);
+            this.groupBoxHFCN.Name = "groupBoxHFCN";
+            this.groupBoxHFCN.Size = new System.Drawing.Size(52, 17);
+            this.groupBoxHFCN.TabIndex = 16;
+            this.groupBoxHFCN.Text = "None";
+            this.groupBoxHFCN.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // HFCRTS
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(102, 45);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(73, 17);
-            this.checkBox6.TabIndex = 19;
-            this.checkBox6.Text = "RS485-rts";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.HFCRTS.AutoSize = true;
+            this.HFCRTS.Location = new System.Drawing.Point(102, 22);
+            this.HFCRTS.Name = "HFCRTS";
+            this.HFCRTS.Size = new System.Drawing.Size(74, 17);
+            this.HFCRTS.TabIndex = 17;
+            this.HFCRTS.Text = "RTS/CTS";
+            this.HFCRTS.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 159);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxHFC);
+            this.Controls.Add(this.groupBoxBits);
             this.Controls.Add(this.ParityLabel);
             this.Controls.Add(this.DataBitsLabel);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxParity);
+            this.Controls.Add(this.comboBoxDataBits);
             this.Controls.Add(this.BaudrateLabel);
             this.Controls.Add(this.comboBoxBaudrate);
             this.Controls.Add(this.ComportLabel);
@@ -242,10 +242,10 @@
             this.Name = "SettingsForm";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxBits.ResumeLayout(false);
+            this.groupBoxBits.PerformLayout();
+            this.groupBoxHFC.ResumeLayout(false);
+            this.groupBoxHFC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,17 +257,17 @@
         private System.Windows.Forms.ComboBox comboBoxBaudrate;
         private System.Windows.Forms.Label ComportLabel;
         private System.Windows.Forms.ComboBox comboBoxComport;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxDataBits;
+        private System.Windows.Forms.ComboBox comboBoxParity;
         private System.Windows.Forms.Label DataBitsLabel;
         private System.Windows.Forms.Label ParityLabel;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox1bit;
+        private System.Windows.Forms.CheckBox checkBox2bits;
+        private System.Windows.Forms.GroupBox groupBoxBits;
+        private System.Windows.Forms.GroupBox groupBoxHFC;
+        private System.Windows.Forms.CheckBox HFC485;
+        private System.Windows.Forms.CheckBox HFCDTR;
+        private System.Windows.Forms.CheckBox groupBoxHFCN;
+        private System.Windows.Forms.CheckBox HFCRTS;
     }
 }
