@@ -78,6 +78,7 @@ namespace UARTTest
             //Add Comports from PC to ComboBoxComport
             string[] ports = SerialPort.GetPortNames();
             comboBoxComport.Items.AddRange(ports);
+            
         }
 
         //on button click open serialport with set settings

@@ -14,6 +14,7 @@ namespace UARTTest
     {
         public SettingsForm()
         {
+            this.Load += SettingsForm_Load;
             InitializeComponent();
         }
 

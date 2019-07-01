@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.BaudrateLabel = new System.Windows.Forms.Label();
             this.comboBoxBaudrate = new System.Windows.Forms.ComboBox();
             this.ComportLabel = new System.Windows.Forms.Label();
@@ -228,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 159);
+            this.ClientSize = new System.Drawing.Size(533, 159);
             this.Controls.Add(this.groupBoxHFC);
             this.Controls.Add(this.groupBoxBits);
             this.Controls.Add(this.ParityLabel);
@@ -239,6 +240,9 @@
             this.Controls.Add(this.comboBoxBaudrate);
             this.Controls.Add(this.ComportLabel);
             this.Controls.Add(this.comboBoxComport);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
