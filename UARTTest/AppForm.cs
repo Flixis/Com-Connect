@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using AutoUpdaterDotNET;
 
 
 namespace UARTTest
@@ -20,6 +21,7 @@ namespace UARTTest
 
     public partial class AppForm : Form
     {
+
         string rxString; //String for data receive handeling
 
         //Unimplemented string, mainly used for things that aren't done but make it into release anyway.
@@ -69,7 +71,7 @@ namespace UARTTest
             ButtonOpen.Enabled = true;
             ButtonClose.Enabled = false;
             CONNECTEDSTATUS.Text = "DISCONNECTED";
-            
+
         }
 
         //get serialports and put in combobox1

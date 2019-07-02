@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using AutoUpdaterDotNET;
 
 namespace UARTTest
 {
@@ -17,6 +18,12 @@ namespace UARTTest
         [STAThread]
         static void Main()
         {
+            AutoUpdater.Start("https://drive.google.com/uc?id=1d36D2-_15OmMQZse66M11r-T0FpikxbG");
+            AutoUpdater.DownloadPath = Environment.CurrentDirectory;
+            AutoUpdater.Mandatory = true;
+            AutoUpdater.OpenDownloadPage = false;
+            AutoUpdater.ReportErrors = true;
+
             //Try to load APP
             try
             {
