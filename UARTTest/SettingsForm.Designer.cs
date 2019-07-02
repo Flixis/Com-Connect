@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.BaudrateLabel = new System.Windows.Forms.Label();
-            this.comboBoxBaudrate = new System.Windows.Forms.ComboBox();
+            this.comboBoxBaudrateS = new System.Windows.Forms.ComboBox();
             this.ComportLabel = new System.Windows.Forms.Label();
-            this.comboBoxComport = new System.Windows.Forms.ComboBox();
+            this.comboBoxComportS = new System.Windows.Forms.ComboBox();
             this.comboBoxDataBits = new System.Windows.Forms.ComboBox();
             this.comboBoxParity = new System.Windows.Forms.ComboBox();
             this.DataBitsLabel = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.HFCDTR = new System.Windows.Forms.CheckBox();
             this.groupBoxHFCN = new System.Windows.Forms.CheckBox();
             this.HFCRTS = new System.Windows.Forms.CheckBox();
+            this.buttonSaveS = new System.Windows.Forms.Button();
             this.groupBoxBits.SuspendLayout();
             this.groupBoxHFC.SuspendLayout();
             this.SuspendLayout();
@@ -58,20 +59,19 @@
             this.BaudrateLabel.TabIndex = 7;
             this.BaudrateLabel.Text = "BAUD RATE";
             // 
-            // comboBoxBaudrate
+            // comboBoxBaudrateS
             // 
-            this.comboBoxBaudrate.AllowDrop = true;
-            this.comboBoxBaudrate.FormattingEnabled = true;
-            this.comboBoxBaudrate.Items.AddRange(new object[] {
+            this.comboBoxBaudrateS.AllowDrop = true;
+            this.comboBoxBaudrateS.FormattingEnabled = true;
+            this.comboBoxBaudrateS.Items.AddRange(new object[] {
             "2400",
             "4800",
             "9600",
             "115200"});
-            this.comboBoxBaudrate.Location = new System.Drawing.Point(335, 6);
-            this.comboBoxBaudrate.Name = "comboBoxBaudrate";
-            this.comboBoxBaudrate.Size = new System.Drawing.Size(172, 21);
-            this.comboBoxBaudrate.TabIndex = 6;
-            this.comboBoxBaudrate.Text = "9600";
+            this.comboBoxBaudrateS.Location = new System.Drawing.Point(335, 6);
+            this.comboBoxBaudrateS.Name = "comboBoxBaudrateS";
+            this.comboBoxBaudrateS.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxBaudrateS.TabIndex = 6;
             // 
             // ComportLabel
             // 
@@ -82,15 +82,14 @@
             this.ComportLabel.TabIndex = 5;
             this.ComportLabel.Text = "COM PORT";
             // 
-            // comboBoxComport
+            // comboBoxComportS
             // 
-            this.comboBoxComport.AllowDrop = true;
-            this.comboBoxComport.FormattingEnabled = true;
-            this.comboBoxComport.Location = new System.Drawing.Point(82, 6);
-            this.comboBoxComport.Name = "comboBoxComport";
-            this.comboBoxComport.Size = new System.Drawing.Size(172, 21);
-            this.comboBoxComport.TabIndex = 4;
-            this.comboBoxComport.Text = "COM4";
+            this.comboBoxComportS.AllowDrop = true;
+            this.comboBoxComportS.FormattingEnabled = true;
+            this.comboBoxComportS.Location = new System.Drawing.Point(82, 6);
+            this.comboBoxComportS.Name = "comboBoxComportS";
+            this.comboBoxComportS.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxComportS.TabIndex = 4;
             // 
             // comboBoxDataBits
             // 
@@ -225,11 +224,22 @@
             this.HFCRTS.Text = "RTS/CTS";
             this.HFCRTS.UseVisualStyleBackColor = true;
             // 
+            // buttonSaveS
+            // 
+            this.buttonSaveS.Location = new System.Drawing.Point(15, 124);
+            this.buttonSaveS.Name = "buttonSaveS";
+            this.buttonSaveS.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveS.TabIndex = 20;
+            this.buttonSaveS.Text = "Save";
+            this.buttonSaveS.UseVisualStyleBackColor = true;
+            this.buttonSaveS.Click += new System.EventHandler(this.ButtonSaveS_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 159);
+            this.Controls.Add(this.buttonSaveS);
             this.Controls.Add(this.groupBoxHFC);
             this.Controls.Add(this.groupBoxBits);
             this.Controls.Add(this.ParityLabel);
@@ -237,9 +247,9 @@
             this.Controls.Add(this.comboBoxParity);
             this.Controls.Add(this.comboBoxDataBits);
             this.Controls.Add(this.BaudrateLabel);
-            this.Controls.Add(this.comboBoxBaudrate);
+            this.Controls.Add(this.comboBoxBaudrateS);
             this.Controls.Add(this.ComportLabel);
-            this.Controls.Add(this.comboBoxComport);
+            this.Controls.Add(this.comboBoxComportS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -258,9 +268,8 @@
         #endregion
 
         private System.Windows.Forms.Label BaudrateLabel;
-        private System.Windows.Forms.ComboBox comboBoxBaudrate;
+        private System.Windows.Forms.ComboBox comboBoxBaudrateS;
         private System.Windows.Forms.Label ComportLabel;
-        private System.Windows.Forms.ComboBox comboBoxComport;
         private System.Windows.Forms.ComboBox comboBoxDataBits;
         private System.Windows.Forms.ComboBox comboBoxParity;
         private System.Windows.Forms.Label DataBitsLabel;
@@ -273,5 +282,7 @@
         private System.Windows.Forms.CheckBox HFCDTR;
         private System.Windows.Forms.CheckBox groupBoxHFCN;
         private System.Windows.Forms.CheckBox HFCRTS;
+        private System.Windows.Forms.Button buttonSaveS;
+        public System.Windows.Forms.ComboBox comboBoxComportS;
     }
 }

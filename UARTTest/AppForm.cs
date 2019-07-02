@@ -21,11 +21,10 @@ namespace UARTTest
 
     public partial class AppForm : Form
     {
-
         string rxString; //String for data receive handeling
 
         //Unimplemented string, mainly used for things that aren't done but make it into release anyway.
-        string Unimplemented = "Function is currently Unimplemented";
+        public string Unimplemented = "Currently Unimplemented";
 
         //Get Windows Versions.
         Version vs = Environment.OSVersion.Version;
@@ -80,7 +79,6 @@ namespace UARTTest
             //Add Comports from PC to ComboBoxComport
             string[] ports = SerialPort.GetPortNames();
             comboBoxComport.Items.AddRange(ports);
-            
         }
 
         //on button click open serialport with set settings
@@ -93,7 +91,7 @@ namespace UARTTest
                 serialPort.BaudRate = Convert.ToInt32(comboBoxBaudrate.Text);
 
                 //hardcoded default serial settings
-                serialPort.DataBits = 8;
+                //serialPort.DataBits = 8;
                 serialPort.Parity = Parity.None;
                 serialPort.StopBits = StopBits.One;
                 serialPort.Handshake = Handshake.None;
@@ -228,6 +226,11 @@ namespace UARTTest
         {
             //on click open git issues page
             System.Diagnostics.Process.Start("https://github.com/Flixis/Com-Connect/issues");
+        }
+
+        private void ComboBoxComport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

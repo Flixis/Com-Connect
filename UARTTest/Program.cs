@@ -22,7 +22,7 @@ namespace UARTTest
             AutoUpdater.Start("https://drive.google.com/uc?id=1d36D2-_15OmMQZse66M11r-T0FpikxbG");
             AutoUpdater.UpdateFormSize = new System.Drawing.Size(800, 600);
             AutoUpdater.DownloadPath = Environment.CurrentDirectory;
-            AutoUpdater.Mandatory = true;
+            AutoUpdater.Mandatory = false;
             AutoUpdater.OpenDownloadPage = false;
             AutoUpdater.ReportErrors = true;
 

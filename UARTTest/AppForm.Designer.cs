@@ -70,6 +70,7 @@
             this.comboBoxComport.Size = new System.Drawing.Size(172, 21);
             this.comboBoxComport.TabIndex = 0;
             this.comboBoxComport.Text = "COM4";
+            this.comboBoxComport.SelectedIndexChanged += new System.EventHandler(this.ComboBoxComport_SelectedIndexChanged);
             // 
             // ComportLabel
             // 
@@ -346,7 +347,6 @@
         private System.Windows.Forms.Label BaudrateLabel;
         private System.Windows.Forms.Button ButtonOpen;
         private System.Windows.Forms.Button ButtonClose;
-        private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.RichTextBox DataTextBox;
         private System.Windows.Forms.ToolTip toolTips;
         private System.Windows.Forms.Button ClearDataTextBoxButton;
@@ -368,6 +368,7 @@
         public System.Windows.Forms.ComboBox comboBoxBaudrate;
         public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.CheckBox checkBox2;
+        public System.IO.Ports.SerialPort serialPort;
     }
 }
 
