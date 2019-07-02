@@ -342,10 +342,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxComport;
         private System.Windows.Forms.Label ComportLabel;
-        private System.Windows.Forms.ComboBox comboBoxBaudrate;
         private System.Windows.Forms.Label BaudrateLabel;
         private System.Windows.Forms.Button ButtonOpen;
         private System.Windows.Forms.Button ButtonClose;
@@ -367,8 +364,10 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSpam;
         private System.Windows.Forms.Button ButtonSettings;
         private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.ComboBox comboBoxComport;
+        public System.Windows.Forms.ComboBox comboBoxBaudrate;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
