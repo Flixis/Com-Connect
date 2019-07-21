@@ -1,20 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UARTTest", "UARTTest\UARTTest.csproj", "{ADC63120-186B-4AA3-93F5-3A5FF656AE25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Debug|x86.ActiveCfg = Debug|x86
+		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Debug|x86.Build.0 = Debug|x86
 		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Release|x86.ActiveCfg = Release|x86
+		{ADC63120-186B-4AA3-93F5-3A5FF656AE25}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
