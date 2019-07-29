@@ -63,11 +63,6 @@
             // 
             this.comboBoxBaudrateS.AllowDrop = true;
             this.comboBoxBaudrateS.FormattingEnabled = true;
-            this.comboBoxBaudrateS.Items.AddRange(new object[] {
-            "2400",
-            "4800",
-            "9600",
-            "115200"});
             this.comboBoxBaudrateS.Location = new System.Drawing.Point(335, 6);
             this.comboBoxBaudrateS.Name = "comboBoxBaudrateS";
             this.comboBoxBaudrateS.Size = new System.Drawing.Size(172, 21);
@@ -90,6 +85,7 @@
             this.comboBoxComportS.Name = "comboBoxComportS";
             this.comboBoxComportS.Size = new System.Drawing.Size(172, 21);
             this.comboBoxComportS.TabIndex = 4;
+            this.comboBoxComportS.SelectedIndexChanged += new System.EventHandler(this.ComboBoxComportS_SelectedIndexChanged);
             // 
             // comboBoxDataBits
             // 

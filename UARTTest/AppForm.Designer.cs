@@ -332,6 +332,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "AppForm";
+            this.Load += new System.EventHandler(this.AppForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).EndInit();
             this.groupBoxComport.ResumeLayout(false);
             this.groupBoxComport.PerformLayout();

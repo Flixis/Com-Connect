@@ -22,7 +22,7 @@ namespace UARTTest
             AutoUpdater.Start("http://welldonelasagna.com/latestrelease.xml");
             AutoUpdater.UpdateFormSize = new System.Drawing.Size(800, 600);
             AutoUpdater.DownloadPath = Environment.CurrentDirectory;
-            AutoUpdater.Mandatory = true;
+            AutoUpdater.Mandatory = false;
             AutoUpdater.OpenDownloadPage = false;
             AutoUpdater.ReportErrors = true;
 

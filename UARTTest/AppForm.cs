@@ -35,6 +35,8 @@ namespace UARTTest
         */
 
 
+
+
         public AppForm()
         {
             //Get version APP
@@ -44,6 +46,8 @@ namespace UARTTest
 
             //Display FormTextName + Versionnumber as AppName
             this.Text = "ComConnect " + VersionApp;
+
+            
 
             if (vs.Major <= 6.2)
             {
@@ -78,7 +82,8 @@ namespace UARTTest
         {
             //Add Comports from PC to ComboBoxComport
             string[] ports = SerialPort.GetPortNames();
-            comboBoxComport.Items.AddRange(ports);
+            comboBoxComport.DataSource = ports;
+            
         }
 
         //on button click open serialport with set settings
@@ -99,6 +104,16 @@ namespace UARTTest
                 serialPort.DtrEnable = true;
 
                 serialPort.Open();
+                //debug
+                Console.WriteLine("\r\n" + serialPort.PortName);
+                Console.WriteLine(serialPort.BaudRate);
+                Console.WriteLine(serialPort.Parity);
+                Console.WriteLine(serialPort.StopBits);
+                Console.WriteLine(serialPort.Handshake);
+                Console.WriteLine(serialPort.RtsEnable);
+                Console.WriteLine(serialPort.DtrEnable);
+                //end debug
+
                 //tell the program that what the data receive handler is
                 serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived);
 
@@ -218,7 +233,8 @@ namespace UARTTest
 
         private void ButtonSettings_Click(object sender, EventArgs e)
         {
-            new SettingsForm().Show();
+            SettingsForm Sfrm = new SettingsForm(this);
+            Sfrm.ShowDialog();
             Console.WriteLine("Loaded SettingsForm");
         }
 
@@ -229,6 +245,11 @@ namespace UARTTest
         }
 
         private void ComboBoxComport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AppForm_Load(object sender, EventArgs e)
         {
 
         }
