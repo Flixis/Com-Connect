@@ -54,8 +54,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SendSpam = new System.Windows.Forms.Button();
             this.ButtonSettings = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxCR = new System.Windows.Forms.CheckBox();
+            this.checkBoxLF = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpam)).BeginInit();
             this.groupBoxComport.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -113,7 +113,7 @@
             this.ButtonOpen.TabIndex = 4;
             this.ButtonOpen.Text = "OPEN";
             this.ButtonOpen.UseVisualStyleBackColor = true;
-            this.ButtonOpen.Click += new System.EventHandler(this.Button1_Click);
+            this.ButtonOpen.Click += new System.EventHandler(this.ButtonOpen_Click);
             // 
             // ButtonClose
             // 
@@ -282,25 +282,25 @@
             this.ButtonSettings.UseVisualStyleBackColor = true;
             this.ButtonSettings.Click += new System.EventHandler(this.ButtonSettings_Click);
             // 
-            // checkBox1
+            // checkBoxCR
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(178, 104);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(47, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "+CR";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxCR.AutoSize = true;
+            this.checkBoxCR.Location = new System.Drawing.Point(178, 104);
+            this.checkBoxCR.Name = "checkBoxCR";
+            this.checkBoxCR.Size = new System.Drawing.Size(47, 17);
+            this.checkBoxCR.TabIndex = 17;
+            this.checkBoxCR.Text = "+CR";
+            this.checkBoxCR.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxLF
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(178, 119);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(44, 17);
-            this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "+LF";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxLF.AutoSize = true;
+            this.checkBoxLF.Location = new System.Drawing.Point(178, 119);
+            this.checkBoxLF.Name = "checkBoxLF";
+            this.checkBoxLF.Size = new System.Drawing.Size(44, 17);
+            this.checkBoxLF.TabIndex = 18;
+            this.checkBoxLF.Text = "+LF";
+            this.checkBoxLF.UseVisualStyleBackColor = true;
             // 
             // AppForm
             // 
@@ -309,8 +309,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(533, 281);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxLF);
+            this.Controls.Add(this.checkBoxCR);
             this.Controls.Add(this.ButtonSettings);
             this.Controls.Add(this.numericUpDownSpam);
             this.Controls.Add(this.SendSpam);
@@ -367,8 +367,8 @@
         private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
         public System.Windows.Forms.ComboBox comboBoxComport;
         public System.Windows.Forms.ComboBox comboBoxBaudrate;
-        public System.Windows.Forms.CheckBox checkBox1;
-        public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.CheckBox checkBoxCR;
+        public System.Windows.Forms.CheckBox checkBoxLF;
         public System.IO.Ports.SerialPort serialPort;
     }
 }

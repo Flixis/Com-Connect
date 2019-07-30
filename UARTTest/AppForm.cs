@@ -87,7 +87,7 @@ namespace UARTTest
         }
 
         //on button click open serialport with set settings
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonOpen_Click(object sender, EventArgs e)
         {
             try
             {
@@ -103,7 +103,11 @@ namespace UARTTest
                 serialPort.RtsEnable = false;
                 serialPort.DtrEnable = true;
 
+                
                 serialPort.Open();
+
+                serialPort.DiscardInBuffer();
+                serialPort.DiscardOutBuffer();
                 //debug
                 Console.WriteLine("\r\n" + serialPort.PortName);
                 Console.WriteLine(serialPort.BaudRate);
@@ -170,10 +174,33 @@ namespace UARTTest
 
         private void SendDataButton_Click(object sender, EventArgs e)
         {
+            byte[] Data = System.Text.Encoding.UTF8.GetBytes(DataSendBox.Text);
+
             try
             {
-                serialPort.Write(DataSendBox.Text + "\r\n");
+                serialPort.Write(Data,0,Data.Length);
                 Console.Write(DataSendBox.Text);
+                /*
+                if (checkBoxCR.Checked.Equals(false) && checkBoxLF.Checked.Equals(false))
+                {
+                    serialPort.Write(DataSendBox.Text);
+                    Console.Write(DataSendBox.Text + " no CRLF ");
+                }
+                else if(checkBoxCR.Checked.Equals(true) && checkBoxLF.Checked.Equals(false))
+                {
+                    serialPort.Write(DataSendBox.Text + "\r");
+                    Console.Write(DataSendBox.Text + " CR ");
+                }
+                else if (checkBoxCR.Checked.Equals(false) && checkBoxLF.Checked.Equals(true))
+                {
+                    serialPort.Write(DataSendBox.Text + "\n");
+                    Console.Write(DataSendBox.Text + " LF ");
+                }
+                else if (checkBoxCR.Checked.Equals(true) && checkBoxLF.Checked.Equals(true))
+                {
+                    serialPort.Write(DataSendBox.Text + "");
+                    Console.Write(DataSendBox.Text + " CRLF ");
+                }*/
             }
             //If something happens that isn't supposed to happen I don't just want the program to crash, so instead I catch the error and display it to the user.
             catch (Exception err)
@@ -253,5 +280,6 @@ namespace UARTTest
         {
 
         }
+
     }
 }
