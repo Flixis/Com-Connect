@@ -1,4 +1,7 @@
+# **THIS PROJECT IS ABANDONED**
+
 # Com-Connect
+
 
 A Simple program to talk with COMPorts on your PC with a simple GUI.
 (Windows only)
